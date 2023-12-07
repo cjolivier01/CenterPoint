@@ -43,7 +43,7 @@ class NuScenesDataset(PointCloudDataset):
         load_interval=1,
         **kwargs,
     ):
-        self.load_interval = load_interval 
+        self.load_interval = load_interval
         super(NuScenesDataset, self).__init__(
             root_path, info_path, pipeline, test_mode=test_mode, class_names=class_names
         )
@@ -63,7 +63,7 @@ class NuScenesDataset(PointCloudDataset):
 
         self.virtual = kwargs.get('virtual', False)
         if self.virtual:
-            self._num_point_features = 16 
+            self._num_point_features = 16
 
         self.version = version
         self.eval_version = "detection_cvpr_2019"
@@ -179,7 +179,7 @@ class NuScenesDataset(PointCloudDataset):
             "calib": None,
             "cam": {},
             "mode": "val" if self.test_mode else "train",
-            "virtual": self.virtual 
+            "virtual": self.virtual
         }
 
         data, _ = self.pipeline(res, info)
